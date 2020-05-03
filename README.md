@@ -7,13 +7,12 @@ as can be seen here:
 - https://github.com/FasterXML/jackson-databind/issues/374
 - https://github.com/FasterXML/jackson-databind/issues/2000
 
-Which makes hard to (de)serialize JSONs when we have a multi-level inheritance with multiple fields being used as discriminator like:
+Which makes hard to (de)serialize JSONs when we have a multi-level inheritance with multiple fields being used as discriminators like:
 
 ```java
 public abstract class QuestionChoice {
 
  public static final String INPUT = "INPUT";
- public static final String 
 
  private String description;
  protected String type;
@@ -39,6 +38,7 @@ public class NumberInputQuestionChoice extends InputQuestionChoice {
     super.inputType = InputQuestionChoice.NUMBER;
   }
 }
+
 public class TextInputQuestionChoice extends InputQuestionChoice {
   private int minLength;
   private int maxLength;
@@ -95,6 +95,7 @@ public class NumberInputQuestionChoice extends InputQuestionChoice {
     super.inputType = InputQuestionChoice.NUMBER;
   }
 }
+
 public class TextInputQuestionChoice extends InputQuestionChoice {
   private int minLength;
   private int maxLength;
