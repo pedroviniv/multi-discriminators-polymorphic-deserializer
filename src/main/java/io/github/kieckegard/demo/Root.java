@@ -1,7 +1,5 @@
 package io.github.kieckegard.demo;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-
 import io.github.kieckegard.demo.spi.SubType;
 import io.github.kieckegard.demo.spi.SubTypes;
 import io.github.kieckegard.demo.spi.TypeInfo;
@@ -10,7 +8,6 @@ import io.github.kieckegard.demo.spi.TypeInfo;
 @SubTypes({
     @SubType(value = FirstLevel.class, name = Root.FIRST_LEVEL)
 })
-@JsonDeserialize(using = PolymorphicDeserializer.class)
 public class Root {
 
     public static final String FIRST_LEVEL = "FIRST_LEVEL";

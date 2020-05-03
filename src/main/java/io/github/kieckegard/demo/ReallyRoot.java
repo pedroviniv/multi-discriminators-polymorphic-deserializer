@@ -1,7 +1,10 @@
 package io.github.kieckegard.demo;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 public class ReallyRoot {
     
+    @JsonDeserialize(using = PolymorphicDeserializer.class)
     private Root root;
 
     protected ReallyRoot() {}
