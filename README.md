@@ -67,6 +67,14 @@ types which wouldn't scale well as the hierarchy grows.
 To solve this, this project offers a custom JsonDeserializer that makes possible to define multiple discriminator fields. Example below:
 
 ```java
+public class Root {
+ 
+ @JsonDeserializer(using = PolymorphicDeserializer.class)
+ private QuestionChoice questionChoice;
+ 
+ //no-arg-constructor, getters & setters
+}
+
 @TypeInfo(property = "type") // default is "type" so in this case we woudln't have to explicitly define the property
 @SubTypes({
   @SubType(value = InputQuestionChoice.class, name = QuestionChoice.INPUT)
@@ -126,3 +134,7 @@ public class TextInputQuestionChoice extends InputQuestionChoice {
   //getters & setters
 }
 ```
+
+**TO-DO:**
+
+- fix bug when annotating the super type with the @JsonDeserialize
