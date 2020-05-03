@@ -16,6 +16,8 @@ public abstract class QuestionChoice {
 
  private String description;
  protected String type;
+ 
+ //no-arg-constructor, getters & setters
 }
 
 public abstract class InputQuestionChoice extends QuestionChoice {
@@ -29,17 +31,24 @@ public abstract class InputQuestionChoice extends QuestionChoice {
   protected InputQuestionChoice() {
     super.type = QuestionChoice.INPUT;
   }
+  
+  //getters & setters
 }
+
 public class NumberInputQuestionChoice extends InputQuestionChoice {
+
   private int min;
   private int max;
   
   protected NumberInputQuestionChoice() {
     super.inputType = InputQuestionChoice.NUMBER;
   }
+  
+  //getters & setters
 }
 
 public class TextInputQuestionChoice extends InputQuestionChoice {
+
   private int minLength;
   private int maxLength;
   private String pattern;
@@ -47,6 +56,8 @@ public class TextInputQuestionChoice extends InputQuestionChoice {
   protected TextInputQuestionChoice() {
     super.inputType = InputQuestionChoice.TEXT;
   }
+  
+  //getters & setters
 }
 ```
 
@@ -63,10 +74,11 @@ To solve this, this project offers a custom JsonDeserializer that makes possible
 public abstract class QuestionChoice {
 
  public static final String INPUT = "INPUT";
- public static final String 
 
  private String description;
  protected String type;
+ 
+ //no-arg-constructor, getters & setters
 }
 
 @TypeInfo(property = "inputType")
@@ -85,18 +97,24 @@ public abstract class InputQuestionChoice extends QuestionChoice {
   protected InputQuestionChoice() {
     super.type = QuestionChoice.INPUT;
   }
+  
+  //getters & setters
 }
 
 public class NumberInputQuestionChoice extends InputQuestionChoice {
+
   private int min;
   private int max;
   
   protected NumberInputQuestionChoice() {
     super.inputType = InputQuestionChoice.NUMBER;
   }
+  
+  //getters & setters
 }
 
 public class TextInputQuestionChoice extends InputQuestionChoice {
+
   private int minLength;
   private int maxLength;
   private String pattern;
@@ -104,5 +122,7 @@ public class TextInputQuestionChoice extends InputQuestionChoice {
   protected TextInputQuestionChoice() {
     super.inputType = InputQuestionChoice.TEXT;
   }
+  
+  //getters & setters
 }
 ```
